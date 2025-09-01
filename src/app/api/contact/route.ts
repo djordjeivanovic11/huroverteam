@@ -50,46 +50,41 @@ interface ContactFormData {
 function validateInput(data: ContactFormData): string[] {
   const errors: string[] = [];
 
-  // All fields are required - check for presence and type
-  if (
-    !data.name ||
-    typeof data.name !== 'string' ||
-    data.name.trim().length < 2
-  ) {
-    errors.push('Name must be at least 2 characters long');
+  // Name validation
+  if (!data.name || typeof data.name !== 'string') {
+    errors.push('Please enter your name');
+  } else if (data.name.trim().length < 2) {
+    errors.push('Please enter your full name (at least 2 characters)');
+  } else if (data.name.length > 100) {
+    errors.push('Name is too long (maximum 100 characters)');
   }
 
-  if (
-    !data.email ||
-    typeof data.email !== 'string' ||
-    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())
-  ) {
-    errors.push('Please provide a valid email address');
+  // Email validation
+  if (!data.email || typeof data.email !== 'string') {
+    errors.push('Please enter your email address');
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+    errors.push('Please enter a valid email address (example: name@company.com)');
+  } else if (data.email.length > 254) {
+    errors.push('Email address is too long (maximum 254 characters)');
   }
 
-  if (
-    !data.organization ||
-    typeof data.organization !== 'string' ||
-    data.organization.trim().length < 2
-  ) {
-    errors.push('Organization must be at least 2 characters long');
+  // Organization validation
+  if (!data.organization || typeof data.organization !== 'string') {
+    errors.push('Please enter your organization or company name');
+  } else if (data.organization.trim().length < 2) {
+    errors.push('Please enter your full organization name (at least 2 characters)');
+  } else if (data.organization.length > 200) {
+    errors.push('Organization name is too long (maximum 200 characters)');
   }
 
-  if (
-    !data.message ||
-    typeof data.message !== 'string' ||
-    data.message.trim().length < 10
-  ) {
-    errors.push('Message must be at least 10 characters long');
+  // Message validation
+  if (!data.message || typeof data.message !== 'string') {
+    errors.push('Please enter a message');
+  } else if (data.message.trim().length < 5) {
+    errors.push('Please write a longer message (at least 5 characters)');
+  } else if (data.message.length > 5000) {
+    errors.push('Message is too long (maximum 5000 characters)');
   }
-
-  // Check for reasonable length limits
-  if (data.name && data.name.length > 100) errors.push('Name is too long');
-  if (data.email && data.email.length > 254) errors.push('Email is too long');
-  if (data.organization && data.organization.length > 200)
-    errors.push('Organization name is too long');
-  if (data.message && data.message.length > 5000)
-    errors.push('Message is too long');
 
   return errors;
 }
@@ -100,7 +95,11 @@ export async function POST(request: NextRequest) {
     const rateLimitKey = getRateLimitKey(request);
     if (isRateLimited(rateLimitKey)) {
       return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
+        {
+          error: 'Too many submissions',
+          message: 'You have submitted too many contact forms recently. Please wait 15 minutes before trying again.',
+          details: ['Rate limit exceeded - maximum 5 submissions per 15 minutes']
+        },
         { status: 429 }
       );
     }
@@ -112,7 +111,14 @@ export async function POST(request: NextRequest) {
     const validationErrors = validateInput(body);
     if (validationErrors.length > 0) {
       return NextResponse.json(
-        { error: 'Validation failed', details: validationErrors },
+        {
+          error: 'Please check your form and try again',
+          message: validationErrors.length === 1
+            ? validationErrors[0]
+            : 'Please fix the following issues:',
+          details: validationErrors,
+          timestamp: new Date().toISOString()
+        },
         { status: 400 }
       );
     }
@@ -143,11 +149,11 @@ export async function POST(request: NextRequest) {
     if (missingVars.length > 0) {
       return NextResponse.json(
         {
-          error: 'Email service not configured properly',
-          details:
-            process.env.NODE_ENV === 'development'
-              ? `Missing variables: ${missingVars.join(', ')}`
-              : 'Please contact administrator',
+          error: 'Email service temporarily unavailable',
+          message: 'We are experiencing technical difficulties with our email system. Please try again later or contact us directly.',
+          details: process.env.NODE_ENV === 'development'
+            ? [`Missing configuration: ${missingVars.join(', ')}`]
+            : ['Email service configuration error']
         },
         { status: 500 }
       );
@@ -157,7 +163,11 @@ export async function POST(request: NextRequest) {
     const portNumber = parseInt(smtpPort!);
     if (isNaN(portNumber) || portNumber < 1 || portNumber > 65535) {
       return NextResponse.json(
-        { error: 'Invalid email configuration' },
+        {
+          error: 'Email service temporarily unavailable',
+          message: 'We are experiencing technical difficulties with our email system. Please try again later.',
+          details: ['Email server configuration error']
+        },
         { status: 500 }
       );
     }
@@ -294,7 +304,11 @@ ${sanitizedData.message}
     );
   } catch {
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      {
+        error: 'Message could not be sent',
+        message: 'We encountered an unexpected error while sending your message. Please try again or contact us directly.',
+        details: ['Email delivery failed - please try again later']
+      },
       { status: 500 }
     );
   }
