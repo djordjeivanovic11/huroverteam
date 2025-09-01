@@ -26,9 +26,9 @@ export default function ContactPage() {
                             Sponsor
                         </button>
                     </Link>
-                    <Link href="https://forms.gle/u689rQBwMp65BJY46" target="_blank" rel="noopener noreferrer" passHref>
+                    <Link href="https://forms.gle/PZfqdjwReBTcqG1B6" target="_blank" rel="noopener noreferrer" passHref>
                         <button className="w-full bg-red-900 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-red-950 transition duration-200">
-                            Become a Team Member
+                            Team Member
                         </button>
                     </Link>
                 </div>

@@ -17,10 +17,10 @@ const SponsorsContact: React.FC = () => {
         <p className="max-w-3xl mx-auto leading-relaxed">
           Contact us at{" "}
           <a
-            href="mailto:harvarduroverteam@gmail.com"
+            href="mailto:hurcofficial@gmail.com"
             className="underline text-blue-600"
           >
-            harvarduroverteam@gmail.com
+            hurcofficial@gmail.com
           </a>{" "}
           for any inquiries. We look forward to hearing from you!
         </p>

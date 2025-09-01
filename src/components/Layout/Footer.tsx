@@ -2,13 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaTiktok, FaYoutube } from 'react-icons/fa'; // You'll need to install react-icons v4.8.0+ for FaTiktok
 
 const Footer: React.FC = () => {
   return (
-
     <footer className="bg-[#5d101b] text-white py-10">
       <div className="container mx-auto px-4 max-w-4xl">
- 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-center justify-items-center">
           
           <div>
@@ -51,27 +50,30 @@ const Footer: React.FC = () => {
             <h5 className="text-xl font-bold mb-2">Connect With Us</h5>
             <p className="text-sm mb-4">
               Harvard University, Cambridge, MA<br />
-              Email: harvarduroverteam@gmail.com<br />
+              Email: hurcofficial@gmail.com<br />
               Phone: +1 (617) 495-1000
             </p>
             <div className="flex justify-center space-x-4">
-              <Link href="https://www.instagram.com/harvardurc/" passHref>
-                <span className="hover:text-gray-400 cursor-pointer">
+              <Link href="https://www.instagram.com/hurcofficial/" passHref>
+                <span className="hover:text-gray-400 cursor-pointer" aria-label="Instagram">
                   <FaInstagram className="w-6 h-6" />
                 </span>
               </Link>
-              <Link href="https://twitter.com/HarvardURC" passHref>
-                <span className="hover:text-gray-400 cursor-pointer">
-                  <Image
-                    src="/images/x_logo.png"
-                    alt="X"
-                    width={24}
-                    height={24}
-                  />
+
+              <Link href="https://www.tiktok.com/@hurcofficial" passHref>
+                <span className="hover:text-gray-400 cursor-pointer" aria-label="TikTok">
+                  <FaTiktok className="w-6 h-6" />
                 </span>
               </Link>
+
+              <Link href="https://www.youtube.com/@harvardundergraduateroboti6727" passHref>
+                <span className="hover:text-gray-400 cursor-pointer" aria-label="YouTube">
+                  <FaYoutube className="w-6 h-6" />
+                </span>
+              </Link>
+
               <Link href="https://www.linkedin.com/school/harvard-university/" passHref>
-                <span className="hover:text-gray-400 cursor-pointer">
+                <span className="hover:text-gray-400 cursor-pointer" aria-label="LinkedIn">
                   <FaLinkedin className="w-6 h-6" />
                 </span>
               </Link>

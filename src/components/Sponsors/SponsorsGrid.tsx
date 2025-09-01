@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 const sponsors = [
+  { name: "IRLock", logo: "/images/sponsors/K08rwqVRISqAL0TwDs7Y_oppositeColors_02png.png" },
   { name: "Bolt Depot", logo: "/images/sponsors/BD-logo.webp" },
   { name: "Maxon", logo: "/images/sponsors/maxon_logo.webp" },
   { name: "Rock West Composites", logo: "/images/sponsors/RWC_logo.webp" },
