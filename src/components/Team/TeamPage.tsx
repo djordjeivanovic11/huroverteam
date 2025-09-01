@@ -93,9 +93,8 @@ const TeamPage: React.FC = () => {
               <Image
                 src={section.imageSrc}
                 alt={section.imageAlt}
-                layout='fill'
-                objectFit='cover'
-                className='rounded-t-lg'
+                fill
+                className='rounded-t-lg object-cover'
                 priority
               />
             </div>
@@ -139,9 +138,8 @@ const TeamPage: React.FC = () => {
               <Image
                 src={expandedTeam.imageSrc}
                 alt={expandedTeam.imageAlt}
-                layout='fill'
-                objectFit='cover'
-                className='rounded-t-xl'
+                fill
+                className='rounded-t-xl object-cover'
                 priority
               />
             </div>

@@ -47,9 +47,8 @@ const AboutHero: React.FC = () => {
         <Image
           src='/images/about/about.webp'
           alt='The Harvard Rover Team'
-          layout='fill'
-          objectFit='cover'
-          className='absolute inset-0'
+          fill
+          className='absolute inset-0 object-cover'
           priority
         />
       </div>

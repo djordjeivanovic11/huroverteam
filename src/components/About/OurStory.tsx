@@ -31,9 +31,8 @@ export default function OurStory() {
         <Image
           src='/images/about/team_break.webp'
           alt='Our Story Image'
-          layout='fill'
-          objectFit='cover'
-          className='opacity-90'
+          fill
+          className='opacity-90 object-cover'
         />
       </div>
     </section>

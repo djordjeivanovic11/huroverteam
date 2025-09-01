@@ -10,9 +10,8 @@ function URCMission() {
         <Image
           src='/images/about/urc.webp'
           alt='URC Competition in Utah'
-          layout='fill'
-          objectFit='cover'
-          className='opacity-90'
+          fill
+          className='opacity-90 object-cover'
         />
       </div>
 

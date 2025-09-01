@@ -54,8 +54,7 @@ const DesignSlider: React.FC = () => {
                 src={img}
                 alt={`Design ${index + 1}`}
                 fill
-                objectFit='contain'
-                className='rounded-lg shadow-2xl'
+                className='rounded-lg shadow-2xl object-contain'
               />
             </div>
           </div>
