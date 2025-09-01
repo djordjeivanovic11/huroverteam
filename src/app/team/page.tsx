@@ -4,13 +4,11 @@ import TeamPage from '@/components/Team/TeamPage';
 const Team: React.FC = () => {
   return (
     <>
-        <div className="flex-grow">
-            <TeamPage />
-        </div>
+      <div className='flex-grow'>
+        <TeamPage />
+      </div>
     </>
   );
-}
-
-
+};
 
 export default Team;

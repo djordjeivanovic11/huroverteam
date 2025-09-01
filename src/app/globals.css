@@ -21,10 +21,10 @@ body {
 }
 
 .no-scrollbar {
-  overflow-y: auto;          /* allow scrolling */
-  scrollbar-width: none;     /* Firefox */
+  overflow-y: auto; /* allow scrolling */
+  scrollbar-width: none; /* Firefox */
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Edge */
+  display: none; /* Chrome, Safari, Edge */
 }
