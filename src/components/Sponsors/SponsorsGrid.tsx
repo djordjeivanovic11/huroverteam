@@ -5,7 +5,7 @@ import Image from 'next/image';
 const sponsors = [
   {
     name: 'IRLock',
-    logo: '/images/sponsors/K08rwqVRISqAL0TwDs7Y_oppositeColors_02png.png',
+    logo: '/images/sponsors/K08rwqVRISqAL0TwDs7Y_oppositeColors_02png.webp',
   },
   { name: 'Bolt Depot', logo: '/images/sponsors/BD-logo.webp' },
   { name: 'Maxon', logo: '/images/sponsors/maxon_logo.webp' },
@@ -13,6 +13,7 @@ const sponsors = [
   { name: 'Harmonic Drive', logo: '/images/sponsors/HD_logo.webp' },
   { name: 'GoBuilda', logo: '/images/sponsors/GB_logo.webp' },
   { name: 'OnlineMetals', logo: '/images/sponsors/OM_logo.webp' },
+  { name: 'Harvard SEAS', logo: '/images/sponsors/harvard_seas_logo.webp' },
 ];
 
 const SponsorsGrid: React.FC = () => {

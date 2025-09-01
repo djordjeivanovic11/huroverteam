@@ -45,11 +45,12 @@ const AboutHero: React.FC = () => {
       {/* Right Side - Image */}
       <div className='w-full md:w-1/2 h-64 md:h-full relative'>
         <Image
-          src='/images/about/about.jpeg'
+          src='/images/about/about.webp'
           alt='The Harvard Rover Team'
           layout='fill'
           objectFit='cover'
           className='absolute inset-0'
+          priority
         />
       </div>
     </section>

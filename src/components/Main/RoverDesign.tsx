@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 const designImages = [
-  '/images/designs/Arm.jpeg',
-  '/images/designs/ArmMount.jpeg',
-  '/images/designs/ArmTopView.jpeg',
-  '/images/designs/Auger.jpeg',
-  '/images/designs/AugerMount.jpeg',
-  '/images/designs/DriveCloseUp.jpeg',
-  '/images/designs/Suspension.jpeg',
-  '/images/designs/FullRover.jpeg',
+  '/images/teams/MechTeam.webp',
+  '/images/teams/ElectricalTeam.webp',
+  '/images/teams/SoftwareTeam.webp',
+  '/images/teams/ScienceTeam.webp',
+  '/images/about/about.webp',
+  '/images/about/team_break.webp',
+  '/images/sponsors/sponsors_page.webp',
+  '/images/about/urc.webp',
 ];
 
 const DesignSlider: React.FC = () => {
@@ -35,7 +35,7 @@ const DesignSlider: React.FC = () => {
       {/* Title */}
       <div className='z-20 w-full text-center mb-8'>
         <h2 className='text-4xl md:text-5xl font-extrabold text-white drop-shadow-md'>
-          Our Design Gallery
+          Our Team Gallery
         </h2>
       </div>
 

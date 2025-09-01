@@ -51,27 +51,45 @@ function validateInput(data: ContactFormData): string[] {
   const errors: string[] = [];
 
   // All fields are required - check for presence and type
-  if (!data.name || typeof data.name !== 'string' || data.name.trim().length < 2) {
+  if (
+    !data.name ||
+    typeof data.name !== 'string' ||
+    data.name.trim().length < 2
+  ) {
     errors.push('Name must be at least 2 characters long');
   }
 
-  if (!data.email || typeof data.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+  if (
+    !data.email ||
+    typeof data.email !== 'string' ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())
+  ) {
     errors.push('Please provide a valid email address');
   }
 
-  if (!data.organization || typeof data.organization !== 'string' || data.organization.trim().length < 2) {
+  if (
+    !data.organization ||
+    typeof data.organization !== 'string' ||
+    data.organization.trim().length < 2
+  ) {
     errors.push('Organization must be at least 2 characters long');
   }
 
-  if (!data.message || typeof data.message !== 'string' || data.message.trim().length < 10) {
+  if (
+    !data.message ||
+    typeof data.message !== 'string' ||
+    data.message.trim().length < 10
+  ) {
     errors.push('Message must be at least 10 characters long');
   }
 
   // Check for reasonable length limits
   if (data.name && data.name.length > 100) errors.push('Name is too long');
   if (data.email && data.email.length > 254) errors.push('Email is too long');
-  if (data.organization && data.organization.length > 200) errors.push('Organization name is too long');
-  if (data.message && data.message.length > 5000) errors.push('Message is too long');
+  if (data.organization && data.organization.length > 200)
+    errors.push('Organization name is too long');
+  if (data.message && data.message.length > 5000)
+    errors.push('Message is too long');
 
   return errors;
 }

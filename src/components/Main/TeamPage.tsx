@@ -9,7 +9,7 @@ export default function TeamPage() {
         <div className='text-center'>
           <h2 className='text-lg font-semibold mb-2'>Mech Team</h2>
           <Image
-            src='/images/MechTeam.jpg'
+            src='/images/teams/MechTeam.webp'
             width={300}
             height={200}
             alt={'Mech'}
@@ -20,7 +20,7 @@ export default function TeamPage() {
         <div className='text-center'>
           <h2 className='text-lg font-semibold mb-2'>Electrical Team</h2>
           <Image
-            src='/images/ElectricalTeam.jpg'
+            src='/images/teams/ElectricalTeam.webp'
             width={300}
             height={200}
             alt={'Electrical'}
@@ -31,7 +31,7 @@ export default function TeamPage() {
         <div className='text-center'>
           <h2 className='text-lg font-semibold mb-2'>Software Team</h2>
           <Image
-            src='/images/SoftwareTeam.jpg'
+            src='/images/teams/SoftwareTeam.webp'
             width={300}
             height={200}
             alt={'Software'}
@@ -42,7 +42,7 @@ export default function TeamPage() {
         <div className='text-center'>
           <h2 className='text-lg font-semibold mb-2'>Science Team</h2>
           <Image
-            src='/images/ScienceTeam.jpg'
+            src='/images/teams/ScienceTeam.webp'
             width={300}
             height={200}
             alt={'Science Team'}

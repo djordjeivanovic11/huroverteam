@@ -9,19 +9,21 @@ const SponsorsHero: React.FC = () => {
       <div className='absolute inset-0 flex'>
         <div className='w-1/2 h-full relative'>
           <Image
-            src='/images/sponsors/sponsors_page.jpeg'
+            src='/images/sponsors/sponsors_page.webp'
             alt='Sponsors Background Left'
             fill
             className='object-cover object-center'
+            priority
           />
         </div>
 
         <div className='w-1/2 h-full relative'>
           <Image
-            src='/images/sponsors/team_photo2.jpg'
+            src='/images/sponsors/team_photo2.webp'
             alt='Sponsors Background Right'
             fill
             className='object-cover object-center'
+            priority
           />
         </div>
       </div>

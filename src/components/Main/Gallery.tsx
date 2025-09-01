@@ -11,22 +11,20 @@ const GallerySection: React.FC = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           <div className='relative group'>
             <Image
-              src='/images/FullRover.jpeg'
-              alt='CAD Rendering of the Rover'
+              src='/images/about/about.webp'
+              alt='Team at Work'
               width={600}
               height={400}
               className='rounded-lg shadow-lg transition-transform transform group-hover:scale-105'
             />
             <div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg'>
-              <p className='text-white text-lg font-bold'>
-                The Rover in Action
-              </p>
+              <p className='text-white text-lg font-bold'>The Team at Work</p>
             </div>
           </div>
 
           <div className='relative group'>
             <Image
-              src='/images/team_photo1.jpeg'
+              src='/images/about/team_photo1.webp'
               alt='Team Photo 1'
               width={400}
               height={300}
@@ -39,7 +37,7 @@ const GallerySection: React.FC = () => {
 
           <div className='relative group'>
             <Image
-              src='/images/team_photo2.jpg'
+              src='/images/sponsors/team_photo2.webp'
               alt='Team Photo 2'
               width={400}
               height={300}
@@ -54,31 +52,29 @@ const GallerySection: React.FC = () => {
 
           <div className='relative group'>
             <Image
-              src='/images/rover_testing.jpg'
-              alt='Rover Testing'
+              src='/images/teams/MechTeam.webp'
+              alt='Mechanical Team'
               width={400}
               height={300}
               className='rounded-lg shadow-lg transition-transform transform group-hover:scale-105'
             />
             <div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg'>
               <p className='text-white text-lg font-bold'>
-                Testing in the Field
+                Mechanical Excellence
               </p>
             </div>
           </div>
 
           <div className='relative group'>
             <Image
-              src='/images/team_meeting.jpg'
-              alt='Team Meeting'
+              src='/images/teams/SoftwareTeam.webp'
+              alt='Software Team'
               width={400}
               height={300}
               className='rounded-lg shadow-lg transition-transform transform group-hover:scale-105'
             />
             <div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg'>
-              <p className='text-white text-lg font-bold'>
-                Strategy & Innovation
-              </p>
+              <p className='text-white text-lg font-bold'>Code & Innovation</p>
             </div>
           </div>
         </div>
